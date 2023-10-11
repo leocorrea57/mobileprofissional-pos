@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">BottomMenuLayout</string>
+    <string name="title_home">Home</string>
+    <string name="title_search">Busca</string>
+    <string name="title_orders">Cadastro</string>
+    <string name="title_profile">Perfil</string>
+    <string name="file_preferences">restaurante_preferences</string>
+    <string name="rest">rest_list</string>
+</resources>

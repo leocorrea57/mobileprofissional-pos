@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_margin="5dp">
+
+        <ImageView
+            android:layout_width="80sp"
+            android:layout_height="80sp"
+            android:src="@drawable/restaurante">
+
+        </ImageView>
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="80sp"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/txtNome"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:layout_marginLeft="8sp"
+        android:text="Nome da Cidade"/>
+
+    <TextView
+        android:id="@+id/txtTipo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        android:layout_marginLeft="8sp"
+        android:text="Nome da Cidade"/>
+
+    <TextView
+        android:id="@+id/txtEntrega"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+
+        android:layout_marginLeft="8sp"
+        android:text="Nome da Cidade"/>
+
+</LinearLayout>
+
+
+    </LinearLayout>
+
+</LinearLayout>

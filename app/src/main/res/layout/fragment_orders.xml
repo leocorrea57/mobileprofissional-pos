@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layout_margin="10dp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="24dp"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:text="Cadastro de restaurante"/>
+
+    <EditText
+        android:id="@+id/fieldNome"
+        android:layout_width="250dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="24dp"
+        android:inputType="text"
+        android:hint="Nome do restaurante" />
+
+    <EditText
+        android:id="@+id/fieldTipo"
+        android:layout_width="250dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="24dp"
+        android:inputType="text"
+        android:hint="Tipo de restaurante" />
+
+    <EditText
+        android:id="@+id/fieldTaxa"
+        android:layout_width="250dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="24dp"
+        android:inputType="numberDecimal"
+        android:hint="Valor da taxa de entrega" />
+
+
+    <Button
+        android:id="@+id/btnAdicionar"
+        android:layout_width="200dp"
+        android:layout_height="40dp"
+        android:text="Adicionar"
+        android:layout_marginTop="48dp"
+        android:layout_gravity="center"
+        />
+
+
+</LinearLayout>
