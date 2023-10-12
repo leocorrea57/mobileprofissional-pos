@@ -1,4 +1,4 @@
-package com.example.bottommenulayout.Model
+package com.example.bottommenulayout.model
 
 import java.math.BigDecimal
 

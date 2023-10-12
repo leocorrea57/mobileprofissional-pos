@@ -1,10 +1,10 @@
-package com.example.bottommenulayout.ui.search
+package com.example.bottommenulayout.ui.foodmenu
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 
-class SearchViewModel : ViewModel() {
+class FoodMenuViewModel : ViewModel() {
 
     private val _text = MutableLiveData<String>().apply {
         value = "This is dashboard Fragment"

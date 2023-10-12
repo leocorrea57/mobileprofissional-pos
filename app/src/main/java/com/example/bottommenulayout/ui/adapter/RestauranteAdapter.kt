@@ -5,7 +5,7 @@ import android.graphics.Typeface
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.example.bottommenulayout.Model.Restaurante
+import com.example.bottommenulayout.model.Restaurante
 import com.example.bottommenulayout.R
 import com.example.bottommenulayout.databinding.AdapterRestauranteBinding
 import java.math.BigDecimal

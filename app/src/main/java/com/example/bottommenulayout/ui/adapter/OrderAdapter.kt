@@ -5,7 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.example.bottommenulayout.Model.Order
+import com.example.bottommenulayout.model.Order
 import com.example.bottommenulayout.R
 import com.example.bottommenulayout.databinding.OrderViewholderBinding
 import java.text.NumberFormat

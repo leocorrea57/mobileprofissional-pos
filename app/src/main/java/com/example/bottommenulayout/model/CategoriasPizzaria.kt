@@ -1,4 +1,4 @@
-package com.example.bottommenulayout.Model
+package com.example.bottommenulayout.model
 
 class CategoriasPizzaria {
     companion object {
