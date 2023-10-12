@@ -1,9 +1,18 @@
 <resources>
-    <string name="app_name">BottomMenuLayout</string>
+    <string name="app_name">Food Delivery</string>
+
     <string name="title_home">Home</string>
     <string name="title_search">Busca</string>
     <string name="title_orders">Cadastro</string>
     <string name="title_profile">Perfil</string>
     <string name="file_preferences">restaurante_preferences</string>
     <string name="rest">rest_list</string>
+
+
+    <string name="restaurantes">Restaurantes</string>
+    <string name="logotipo">logotipo</string>
+    <string name="logotipo_restaurante">logotipo do restaurante</string>
+    <string name="ver_mais">Ver mais</string>
+    <string name="destaques">Destaques</string>
+    <string name="entrega_gratis">Entrega grátis</string>
 </resources>

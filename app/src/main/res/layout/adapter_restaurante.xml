@@ -1,58 +1,59 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="vertical">
+    android:layout_marginVertical="8dp"
+    android:orientation="horizontal">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_margin="5dp">
+    <ImageView
+        android:id="@+id/icon_restaurante"
+        android:layout_width="52sp"
+        android:layout_height="52sp"
+        android:contentDescription="@string/logotipo_restaurante"
+        android:src="@drawable/restaurante"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:tint="@color/light_gray" />
 
-        <ImageView
-            android:layout_width="80sp"
-            android:layout_height="80sp"
-            android:src="@drawable/restaurante">
-
-        </ImageView>
-
-<LinearLayout
-    android:layout_width="match_parent"
-    android:layout_height="80sp"
-    android:orientation="vertical">
 
     <TextView
-        android:id="@+id/txtNome"
-        android:layout_width="match_parent"
+        android:id="@+id/text_nome"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:textSize="20sp"
+        android:layout_marginStart="8sp"
+        android:textColor="@color/text_black"
+        android:textSize="13sp"
+        app:layout_constraintBottom_toTopOf="@id/text_tipo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/icon_restaurante"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Restaurante Janta Boa" />
+
+    <TextView
+        android:id="@+id/text_tipo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/text_gray"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toTopOf="@id/text_taxa"
+        app:layout_constraintStart_toStartOf="@id/text_nome"
+        app:layout_constraintTop_toBottomOf="@id/text_nome"
+        tools:text="Lanches" />
+
+    <TextView
+        android:id="@+id/text_taxa"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/text_gray"
+        android:textSize="12sp"
         android:textStyle="bold"
-        android:textColor="@color/black"
-        android:layout_marginLeft="8sp"
-        android:text="Nome da Cidade"/>
+        android:layout_marginTop="2dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@id/text_tipo"
+        app:layout_constraintTop_toBottomOf="@id/text_tipo"
+        tools:text="R$ 10,00" />
 
-    <TextView
-        android:id="@+id/txtTipo"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textSize="18sp"
-        android:layout_marginLeft="8sp"
-        android:text="Nome da Cidade"/>
-
-    <TextView
-        android:id="@+id/txtEntrega"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textSize="18sp"
-
-        android:layout_marginLeft="8sp"
-        android:text="Nome da Cidade"/>
-
-</LinearLayout>
-
-
-    </LinearLayout>
-
-</LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
