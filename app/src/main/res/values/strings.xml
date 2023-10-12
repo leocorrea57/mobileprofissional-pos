@@ -3,9 +3,14 @@
 
     <string name="title_home">Home</string>
     <string name="title_search">Busca</string>
-    <string name="title_orders">Cadastro</string>
+    <string name="title_cadastro">Cadastro</string>
     <string name="title_profile">Perfil</string>
+    <string name="title_cardapio">Cardápio</string>
+    <string name="title_pedidos">Pedidos</string>
+
     <string name="file_preferences">restaurante_preferences</string>
+    <string name="orders_preferences">orders_preferences</string>
+    <string name="itens_preferences">itens_preferences</string>
     <string name="rest">rest_list</string>
 
 
@@ -13,6 +18,11 @@
     <string name="logotipo">logotipo</string>
     <string name="logotipo_restaurante">logotipo do restaurante</string>
     <string name="ver_mais">Ver mais</string>
+    <string name="ver_todos">Ver todos</string>
     <string name="destaques">Destaques</string>
     <string name="entrega_gratis">Entrega grátis</string>
+    <string name="pendentes">Pendentes</string>
+    <string name="finalizados">Finalizados</string>
+    <string name="subtotal">Subtotal:</string>
+    <string name="pedido">Pedido:</string>
 </resources>

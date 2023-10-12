@@ -5,15 +5,35 @@ import java.math.BigDecimal
 object DataStore {
 
     var restaurantes: MutableList<Restaurante> = arrayListOf()
+    var pedidos: MutableList<Order> = arrayListOf()
     var id: Int = 0
 
     init {
-        restaurantes.add(Restaurante("Restaurante Janta Boa", 0, "Marmita", BigDecimal.TEN))
-        restaurantes.add(Restaurante("Lanchonete Sabor Rápido", 0, "Lanche", BigDecimal(12.99)))
-        restaurantes.add(Restaurante("Pizza Delícia Express", 0, "Pizza", BigDecimal(0)))
-        restaurantes.add(Restaurante("Fit & Fresh Delícias Saudáveis", 0, "Saudável", BigDecimal(7.49)))
-        restaurantes.add(Restaurante("Delícias do Oriente", 0, "Japonesa", BigDecimal(0)))
+        val item1 = OrderItem(
+            "Calabresa Grande",
+            "Pizza grande 8 fatias, massa tradicional, recheio calabresa",
+            CategoriasPizzaria.SALGADAS,
+            1,
+            BigDecimal(49.99)
+        )
+        val item2 = OrderItem(
+            "Brigadeiro Grande",
+            "Pizza grande 8 fatias, massa tradicional, recheio brigadeiro",
+            CategoriasPizzaria.DOCES,
+            1,
+            BigDecimal(59.99)
+        )
 
+        pedidos.add(Order(1000, listOf(item1, item2), true))
+        pedidos.add(Order(1001, listOf(item1, item1), true))
+        pedidos.add(Order(1002, listOf(item1, item1), true))
+        pedidos.add(Order(1003, listOf(item1, item1), true))
+        pedidos.add(Order(1004, listOf(item1, item1), true))
+        pedidos.add(Order(1005, listOf(item2, item2), false))
+        pedidos.add(Order(1006, listOf(item1), false))
+        pedidos.add(Order(1007, listOf(item2), false))
+        pedidos.add(Order(1008, listOf(item2), false))
+        pedidos.add(Order(1009, listOf(item2), false))
     }
 
     fun addRestaurante(rest: Restaurante) {

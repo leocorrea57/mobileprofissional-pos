@@ -24,11 +24,10 @@
 
             <ImageView
                 android:id="@+id/image_logo"
-                android:layout_width="162dp"
-                android:layout_height="125dp"
+                android:layout_width="wrap_content"
+                android:layout_height="100dp"
                 android:contentDescription="@string/logotipo"
                 android:src="@drawable/logo"
-                android:layout_marginTop="8dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="parent"
@@ -39,10 +38,11 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="24dp"
-                android:text="@string/destaques"
+                android:text="@string/pendentes"
                 android:textColor="@color/text_black"
                 android:textSize="15sp"
                 android:textStyle="bold"
+                android:letterSpacing="0.05"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/image_logo" />
 
@@ -51,7 +51,7 @@
                 style="@style/Widget.MaterialComponents.Button.TextButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/ver_mais"
+                android:text="@string/ver_todos"
                 android:textAllCaps="false"
                 android:textSize="13sp"
                 app:layout_constraintBottom_toBottomOf="@id/title_destaques"
@@ -59,15 +59,16 @@
                 app:layout_constraintTop_toTopOf="@id/title_destaques" />
 
             <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/recycler_destaques"
+                android:id="@+id/recycler_pendentes"
                 android:layout_width="0dp"
-                android:layout_height="300dp"
+                android:layout_height="288dp"
                 android:layout_marginTop="8dp"
                 app:layout_constraintEnd_toEndOf="parent"
+                android:nestedScrollingEnabled="false"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/title_destaques"
                 tools:itemCount="4"
-                tools:listitem="@layout/adapter_restaurante" />
+                tools:listitem="@layout/order_viewholder" />
 
 
             <TextView
@@ -75,19 +76,20 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="32dp"
-                android:text="@string/entrega_gratis"
+                android:text="@string/finalizados"
                 android:textColor="@color/text_black"
                 android:textSize="15sp"
                 android:textStyle="bold"
+                android:letterSpacing="0.05"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/recycler_destaques" />
+                app:layout_constraintTop_toBottomOf="@id/recycler_pendentes" />
 
             <Button
                 android:id="@+id/button_ver_mais_frete"
                 style="@style/Widget.MaterialComponents.Button.TextButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/ver_mais"
+                android:text="@string/ver_todos"
                 android:textAllCaps="false"
                 android:textSize="13sp"
                 app:layout_constraintBottom_toBottomOf="@id/title_frete_gratis"
@@ -95,15 +97,19 @@
                 app:layout_constraintTop_toTopOf="@id/title_frete_gratis" />
 
             <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/recycler_frete"
+                android:id="@+id/recycler_finalizados"
                 android:layout_width="0dp"
-                android:layout_height="300dp"
+                android:layout_height="288dp"
                 android:layout_marginTop="8dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
+                android:nestedScrollingEnabled="false"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintVertical_bias="0"
+                android:layout_marginBottom="16dp"
                 app:layout_constraintTop_toBottomOf="@id/title_frete_gratis"
                 tools:itemCount="4"
-                tools:listitem="@layout/adapter_restaurante" />
+                tools:listitem="@layout/order_viewholder" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
 

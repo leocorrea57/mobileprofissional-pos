@@ -42,7 +42,7 @@ class RestauranteAdapter(private var restaurantes: MutableList<Restaurante>) :
             } else {
                 binding.textTaxa.apply {
                     text = "Grátis"
-                    setTextColor(itemView.resources.getColor(R.color.text_green, null))
+                    setTextColor(itemView.resources.getColor(R.color.status_green, null))
                     typeface = Typeface.DEFAULT
                 }
             }

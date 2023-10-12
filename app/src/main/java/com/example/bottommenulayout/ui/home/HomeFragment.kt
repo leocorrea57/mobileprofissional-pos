@@ -8,7 +8,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.bottommenulayout.databinding.FragmentHomeBinding
-import com.example.bottommenulayout.ui.adapter.RestauranteAdapter
+import com.example.bottommenulayout.ui.adapter.OrderAdapter
 
 class HomeFragment : Fragment() {
     private lateinit var binding: FragmentHomeBinding
@@ -32,14 +32,14 @@ class HomeFragment : Fragment() {
     private fun setContent() {
         LinearLayoutManager(this.context).apply {
             this.orientation = LinearLayoutManager.VERTICAL
-            binding.recyclerDestaques.layoutManager = this
-            binding.recyclerDestaques.adapter = RestauranteAdapter(homeViewModel.getListDestaques())
+            binding.recyclerPendentes.layoutManager = this
+            binding.recyclerPendentes.adapter = OrderAdapter(homeViewModel.getListPendentes())
         }
 
         LinearLayoutManager(this.context).apply {
             this.orientation = LinearLayoutManager.VERTICAL
-            binding.recyclerFrete.layoutManager = this
-            binding.recyclerFrete.adapter = RestauranteAdapter(homeViewModel.getListFreteGratis())
+            binding.recyclerFinalizados.layoutManager = this
+            binding.recyclerFinalizados.adapter = OrderAdapter(homeViewModel.getListFinalizados())
         }
     }
 }

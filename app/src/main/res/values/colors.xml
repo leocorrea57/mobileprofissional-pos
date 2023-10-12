@@ -10,11 +10,13 @@
 
     <color name="text_black">#2E2E2E</color>
     <color name="text_gray">#9C9B9B</color>
-    <color name="text_green">#40A86A</color>
+
+    <color name="status_green">#40A86A</color>
+    <color name="status_orange">#E6A626</color>
 
     <color name="primary_red">#e81f1d</color>
     <color name="secondary_red">#971B1A</color>
-    <color name="light_gray">#D3D3D3</color>
+    <color name="light_gray">#EAEAEA</color>
 
 
 </resources>
