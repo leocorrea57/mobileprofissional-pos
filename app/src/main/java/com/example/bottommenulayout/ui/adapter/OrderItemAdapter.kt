@@ -32,9 +32,9 @@ class OrderItemAdapter(private var itensPedido: MutableList<OrderItem>) :
         fun bind(item: OrderItem, divider: Boolean, showQuantidade: Boolean) {
             val numberFormat = NumberFormat.getCurrencyInstance() //utilizado para formatar o valor em R$
 
-            binding.textNome.text = item.nome
-            binding.textDescricao.text = item.descricao
-            binding.textValor.text = numberFormat.format(item.valor)
+            binding.textNome.text = item.foodMenuItem.nome
+            binding.textDescricao.text = item.foodMenuItem.descricao
+            binding.textValor.text = numberFormat.format(item.valorTotalItem)
 
             if (divider) binding.divider.visibility = View.VISIBLE else binding.divider.visibility = View.GONE
             if (showQuantidade) binding.textQuantidade.visibility = View.VISIBLE else binding.textQuantidade.visibility = View.GONE

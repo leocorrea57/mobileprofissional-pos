@@ -10,7 +10,7 @@ class Order(
     ) {
 
     val valorTotal: BigDecimal
-        get() = itens.sumOf { it.valor }
+        get() = itens.sumOf { it.valorTotalItem }
 
     val totalItens: Int
         get() = itens.sumOf { it.quantidade }
