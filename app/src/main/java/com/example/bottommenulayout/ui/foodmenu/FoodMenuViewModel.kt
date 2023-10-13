@@ -1,13 +1,12 @@
 package com.example.bottommenulayout.ui.foodmenu
 
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.example.bottommenulayout.model.DataStore
+import com.example.bottommenulayout.model.OrderItem
 
 class FoodMenuViewModel : ViewModel() {
 
-    private val _text = MutableLiveData<String>().apply {
-        value = "This is dashboard Fragment"
+    fun getFoodMenuItens(): List<OrderItem> {
+        return DataStore.itensPedido
     }
-    val text: LiveData<String> = _text
 }

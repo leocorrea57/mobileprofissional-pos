@@ -15,4 +15,14 @@
         <!-- Customize your theme here. -->
         <item name="android:fontFamily">@font/roboto</item>
     </style>
+
+    <style name="botto_navigation_view" parent="Widget.Material3.BottomNavigationView">
+        <item name="colorSurface">@color/primary_red</item>
+        <item name="colorOnSurfaceVariant">@color/white</item>
+        <item name="itemActiveIndicatorStyle">@style/App.Custom.Indicator</item>
+    </style>
+
+    <style name="App.Custom.Indicator" parent="Widget.Material3.BottomNavigationView.ActiveIndicator">
+        <item name="android:color">@color/secondary_red</item>
+    </style>
 </resources>
