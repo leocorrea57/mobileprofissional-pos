@@ -9,12 +9,16 @@ import com.example.bottommenulayout.databinding.FoodMenuItemBinding
 import com.example.bottommenulayout.model.FoodMenuItem
 import java.text.NumberFormat
 
-class FoodMenuItemAdapter(private var cardapio: MutableList<FoodMenuItem>) :
+class FoodMenuItemAdapter(
+    private val deleteListener: (FoodMenuItem) -> Unit,
+    private val editListener: (FoodMenuItem) -> Unit
+) :
     RecyclerView.Adapter<FoodMenuItemAdapter.FoodMenuItemHolder>() {
+    private var cardapio = mutableListOf<FoodMenuItem>()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): FoodMenuItemHolder {
         FoodMenuItemBinding.inflate(LayoutInflater.from(parent.context), parent, false).apply {
-            return FoodMenuItemHolder(this)
+            return FoodMenuItemHolder(this, deleteListener, editListener)
         }
     }
 
@@ -26,7 +30,12 @@ class FoodMenuItemAdapter(private var cardapio: MutableList<FoodMenuItem>) :
     }
 
 
-    inner class FoodMenuItemHolder(private var binding: FoodMenuItemBinding) : RecyclerView.ViewHolder(binding.root) {
+    inner class FoodMenuItemHolder(
+        private var binding: FoodMenuItemBinding,
+        val deleteListener: (FoodMenuItem) -> Unit,
+        val editListener: (FoodMenuItem) -> Unit
+    ) :
+        RecyclerView.ViewHolder(binding.root) {
         @SuppressLint("SetTextI18n")
         fun bind(item: FoodMenuItem, divider: Boolean) {
             val numberFormat = NumberFormat.getCurrencyInstance() //utilizado para formatar o valor em R$
@@ -36,10 +45,20 @@ class FoodMenuItemAdapter(private var cardapio: MutableList<FoodMenuItem>) :
             binding.textValor.text = numberFormat.format(item.valor)
 
             if (divider) binding.divider.visibility = View.VISIBLE else binding.divider.visibility = View.GONE
+
+            binding.buttonDelete.setOnClickListener { deleteListener(item) }
+            binding.buttonEdit.setOnClickListener { editListener(item) }
+
         }
     }
 
     override fun getItemCount(): Int {
         return cardapio.size
+    }
+
+    @SuppressLint("NotifyDataSetChanged")
+    fun updateList(list: List<FoodMenuItem>) {
+        cardapio = list.toMutableList()
+        notifyDataSetChanged()
     }
 }

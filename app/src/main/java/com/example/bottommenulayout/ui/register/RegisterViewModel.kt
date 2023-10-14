@@ -3,7 +3,6 @@ package com.example.bottommenulayout.ui.register
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.example.bottommenulayout.model.CategoriasPizzaria
 import com.example.bottommenulayout.model.DataStore
 import com.example.bottommenulayout.model.FoodMenuItem
 
@@ -16,6 +15,6 @@ class RegisterViewModel : ViewModel() {
 
 
     fun addFoodMenuItem(item : FoodMenuItem) {
-        DataStore.cardapio.add(item)
+        DataStore.foodMenu.add(item)
     }
 }

@@ -5,9 +5,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.example.bottommenulayout.model.Order
 import com.example.bottommenulayout.R
 import com.example.bottommenulayout.databinding.OrderViewholderBinding
+import com.example.bottommenulayout.model.Order
 import java.text.NumberFormat
 
 class OrderAdapter(private var pedidos: MutableList<Order>) :
@@ -32,8 +32,8 @@ class OrderAdapter(private var pedidos: MutableList<Order>) :
         fun bind(pedido: Order, divider: Boolean) {
             val numberFormat = NumberFormat.getCurrencyInstance() //utilizado para formatar o valor em R$
 
-            binding.textNumeroPedido.text = "#${pedido.numero}"
-            binding.textQuantidadeItens.text = "${pedido.totalItens} ${if (pedido.totalItens != 1) "itans" else "item"}"
+            binding.textNumeroPedido.text = "#${pedido.id}"
+            binding.textQuantidadeItens.text = "${pedido.totalItens} ${if (pedido.totalItens != 1) "itens" else "item"}"
             binding.textValor.text = numberFormat.format(pedido.valorTotal)
 
             if (pedido.status) {

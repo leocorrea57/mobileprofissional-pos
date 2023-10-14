@@ -21,9 +21,6 @@ class OrdersFragment : Fragment() {
     ): View {
         binding = FragmentOrdersBinding.inflate(inflater, container, false)
         ordersViewModel = ViewModelProvider(this)[OrdersViewModel::class.java]
-
-        ordersViewModel.loadData(requireContext())
-
         setContent()
 
         return binding.root
