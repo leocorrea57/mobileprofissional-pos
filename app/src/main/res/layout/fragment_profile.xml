@@ -26,7 +26,8 @@
         android:layout_marginTop="16dp"
         android:layout_gravity="center"
         android:textAlignment="center"
-        android:text="Restaurante Family Foods"/>
+        android:text="Restaurante Pizz Family
+"/>
 
     <TextView
         android:layout_width="wrap_content"
@@ -35,7 +36,7 @@
         android:layout_marginTop="4dp"
         android:layout_gravity="center"
         android:textAlignment="center"
-        android:text="Comida caseira com variedade e entrega todos os dias da semana"/>
+        android:text="Pizzaria e comida caseira com variedade e entrega todos os dias da semana"/>
 
     <View
         android:id="@+id/divider1"

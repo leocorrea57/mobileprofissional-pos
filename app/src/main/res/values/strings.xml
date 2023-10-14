@@ -25,4 +25,10 @@
     <string name="finalizados">Finalizados</string>
     <string name="subtotal">Subtotal:</string>
     <string name="pedido">Pedido:</string>
+
+    <string-array name="itens_array">
+        <item>Pizzas salgadas</item>
+        <item>Pizzas doces</item>
+        <item>BEBIDAS</item>
+    </string-array>
 </resources>

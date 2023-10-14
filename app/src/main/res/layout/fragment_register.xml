@@ -8,36 +8,47 @@
     android:layout_margin="10dp">
 
     <TextView
+        android:id="@+id/title_cardapio"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="24dp"
-        android:textColor="@color/black"
-        android:textStyle="bold"
-        android:text="Cadastro de restaurante"/>
+        android:layout_marginTop="0dp"
+        android:letterSpacing="0.05"
+        android:text="@string/title_cadastro"
+        android:textColor="@color/text_black"
+        android:textSize="15sp"
+        android:textStyle="bold" />
 
     <EditText
         android:id="@+id/fieldNome"
-        android:layout_width="250dp"
+        android:layout_width="match_parent"
         android:layout_height="40dp"
         android:layout_marginTop="24dp"
         android:inputType="text"
-        android:hint="Nome do restaurante" />
+        android:hint="Nome do item" />
 
     <EditText
-        android:id="@+id/fieldTipo"
-        android:layout_width="250dp"
+        android:id="@+id/fieldDesc"
+        android:layout_width="match_parent"
         android:layout_height="40dp"
         android:layout_marginTop="24dp"
         android:inputType="text"
-        android:hint="Tipo de restaurante" />
+        android:hint="Descricao" />
+
+    <Spinner
+        android:id="@+id/category_spinner"
+        android:layout_marginTop="16dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        />
 
     <EditText
-        android:id="@+id/fieldTaxa"
-        android:layout_width="250dp"
+        android:id="@+id/fieldValor"
+        android:layout_width="match_parent"
         android:layout_height="40dp"
         android:layout_marginTop="24dp"
         android:inputType="numberDecimal"
-        android:hint="Valor da taxa de entrega" />
+        android:hint="Valor (R$)" />
 
 
     <Button
