@@ -18,7 +18,7 @@ class RegisterFragment : Fragment() {
     private var _binding: FragmentRegisterBinding? = null
     private val binding get() = _binding!!
 
-    private lateinit var foodMenuItem: FoodMenuItem
+    private lateinit var foodMenuItem : FoodMenuItem
     private lateinit var registerViewModel: RegisterViewModel
 
     override fun onCreateView(
@@ -27,8 +27,7 @@ class RegisterFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
 
-
-        registerViewModel =
+        val registerViewModel =
             ViewModelProvider(this).get(RegisterViewModel::class.java)
 
         _binding = FragmentRegisterBinding.inflate(inflater, container, false)
@@ -51,7 +50,15 @@ class RegisterFragment : Fragment() {
 
         binding.btnAdicionar.setOnClickListener {
 
-            //val value = binding.fieldValor.get
+            if(!validateFields())
+            {
+                Toast.makeText(
+                    activity,
+                    "Favor preencher campos do formulário",
+                    Toast.LENGTH_LONG
+                ).show()
+                return@setOnClickListener
+            }
 
             foodMenuItem = FoodMenuItem(
                 nome = binding.fieldNome.text.toString(),
@@ -61,6 +68,7 @@ class RegisterFragment : Fragment() {
             )
 
             registerViewModel.addFoodMenuItem(foodMenuItem)
+            cleanFields()
 
             Toast.makeText(
                 activity,
@@ -70,6 +78,33 @@ class RegisterFragment : Fragment() {
         }
 
         return root
+    }
+
+    private fun cleanFields()
+    {
+        binding.fieldNome.text.clear()
+        binding.fieldDesc.text.clear()
+        binding.fieldValor.text.clear()
+        binding.categorySpinner.setSelection(0)
+    }
+
+    private fun validateFields() : Boolean
+    {
+        var isValid = true
+
+        if(binding.fieldNome.text.toString().isEmpty())
+        {
+            binding.fieldNome.setError("Nome não pode ser vazio")
+            isValid = false
+        }
+
+        if(binding.fieldDesc.text.toString().isEmpty())
+        {
+            binding.fieldDesc.setError("Descrição não pode ser vazio")
+            isValid = false
+        }
+
+        return isValid
     }
 
     override fun onDestroyView() {
