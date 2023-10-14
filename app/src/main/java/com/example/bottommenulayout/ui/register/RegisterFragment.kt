@@ -27,7 +27,7 @@ class RegisterFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
 
-        val registerViewModel =
+        registerViewModel =
             ViewModelProvider(this).get(RegisterViewModel::class.java)
 
         _binding = FragmentRegisterBinding.inflate(inflater, container, false)
@@ -41,9 +41,7 @@ class RegisterFragment : Fragment() {
                 R.array.itens_array,
                 android.R.layout.simple_spinner_item
             ).also { adapter ->
-                // Specify the layout to use when the list of choices appears.
                 adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
-                // Apply the adapter to the spinner.
                 spinner.adapter = adapter
             }
         }
@@ -54,7 +52,7 @@ class RegisterFragment : Fragment() {
                 Toast.makeText(
                     activity,
                     "Favor preencher campos do formulário",
-                    Toast.LENGTH_LONG
+                    Toast.LENGTH_SHORT
                 ).show()
                 return@setOnClickListener
             }
@@ -71,7 +69,7 @@ class RegisterFragment : Fragment() {
 
             Toast.makeText(
                 activity,
-                "Item ${binding.fieldNome.text} adicionado!",
+                "Item ${foodMenuItem.nome} adicionado!",
                 Toast.LENGTH_LONG
             ).show()
         }
@@ -98,7 +96,6 @@ class RegisterFragment : Fragment() {
             binding.fieldDesc.setError("Descrição não pode ser vazio")
             isValid = false
         }
-
         return isValid
     }
 
