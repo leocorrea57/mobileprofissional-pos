@@ -11,4 +11,5 @@ class FoodMenuViewModel : ViewModel() {
     }
 
     fun deleteItem(id: Int): Boolean = DataStore.deleteFoodMenuItem(id)
+    fun editItem(item: FoodMenuItem): Boolean = DataStore.editFoodMenuItem(item)
 }

@@ -25,6 +25,11 @@
     <string name="finalizados">Finalizados</string>
     <string name="subtotal">Subtotal:</string>
     <string name="pedido">Pedido:</string>
+    <string name="salvar">Salvar</string>
+    <string name="valor_rr">Valor (R$)</string>
+    <string name="descricao">Descrição</string>
+    <string name="nome_do_item">Nome do item</string>
+    <string name="editar_item">Editar item</string>
 
     <string-array name="itens_array">
         <item>Pizzas salgadas</item>

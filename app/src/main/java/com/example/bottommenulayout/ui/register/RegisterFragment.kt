@@ -18,7 +18,7 @@ class RegisterFragment : Fragment() {
     private var _binding: FragmentRegisterBinding? = null
     private val binding get() = _binding!!
 
-    private lateinit var foodMenuItem : FoodMenuItem
+    private lateinit var foodMenuItem: FoodMenuItem
     private lateinit var registerViewModel: RegisterViewModel
 
     override fun onCreateView(
@@ -50,8 +50,7 @@ class RegisterFragment : Fragment() {
 
         binding.btnAdicionar.setOnClickListener {
 
-            if(!validateFields())
-            {
+            if (!validateFields()) {
                 Toast.makeText(
                     activity,
                     "Favor preencher campos do formulário",
@@ -80,26 +79,22 @@ class RegisterFragment : Fragment() {
         return root
     }
 
-    private fun cleanFields()
-    {
+    private fun cleanFields() {
         binding.fieldNome.text.clear()
         binding.fieldDesc.text.clear()
         binding.fieldValor.text.clear()
         binding.categorySpinner.setSelection(0)
     }
 
-    private fun validateFields() : Boolean
-    {
+    private fun validateFields(): Boolean {
         var isValid = true
 
-        if(binding.fieldNome.text.toString().isEmpty())
-        {
+        if (binding.fieldNome.text.toString().isEmpty()) {
             binding.fieldNome.setError("Nome não pode ser vazio")
             isValid = false
         }
 
-        if(binding.fieldDesc.text.toString().isEmpty())
-        {
+        if (binding.fieldDesc.text.toString().isEmpty()) {
             binding.fieldDesc.setError("Descrição não pode ser vazio")
             isValid = false
         }
