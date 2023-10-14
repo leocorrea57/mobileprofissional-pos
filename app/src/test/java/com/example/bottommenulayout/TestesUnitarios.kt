@@ -1,7 +1,9 @@
 package com.example.bottommenulayout
 
+import android.provider.ContactsContract.Data
 import com.example.bottommenulayout.model.*
 import junit.framework.TestCase.assertEquals
+import org.junit.Assert
 import org.junit.Test
 import java.math.BigDecimal
 
@@ -87,6 +89,15 @@ class TestesUnitarios {
         DataStore.addFoodMenuItem(itemCardapio)
         DataStore.deleteFoodMenuItem(itemCardapio.id)
         assertEquals(3, DataStore.foodMenu.size)
+    }
+    @Test
+    fun edicaoItemCardapio(){
+        val updatedText = "Pizza de calabresa com Catupiry"
+        val editeditem = DataStore.foodMenu.first()
+        editeditem.nome = updatedText
+        DataStore.editFoodMenuItem(editeditem)
+        assertEquals(updatedText,DataStore.foodMenu.first().nome)
+
     }
 
 }
