@@ -10,10 +10,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.example.bottommenulayout.R
 import com.example.bottommenulayout.databinding.FragmentRegisterBinding
-import com.example.bottommenulayout.model.DataStore
 import com.example.bottommenulayout.model.FoodMenuItem
-import com.example.bottommenulayout.model.Restaurante
-import com.example.bottommenulayout.ui.foodmenu.FoodMenuViewModel
 import java.math.BigDecimal
 
 class RegisterFragment : Fragment() {
@@ -21,8 +18,7 @@ class RegisterFragment : Fragment() {
     private var _binding: FragmentRegisterBinding? = null
     private val binding get() = _binding!!
 
-    private var position = -1
-    private lateinit var foodMenuItem : FoodMenuItem
+    private lateinit var foodMenuItem: FoodMenuItem
     private lateinit var registerViewModel: RegisterViewModel
 
     override fun onCreateView(
@@ -32,7 +28,7 @@ class RegisterFragment : Fragment() {
     ): View {
 
 
-        val registerViewModel =
+        registerViewModel =
             ViewModelProvider(this).get(RegisterViewModel::class.java)
 
         _binding = FragmentRegisterBinding.inflate(inflater, container, false)
@@ -61,14 +57,14 @@ class RegisterFragment : Fragment() {
                 nome = binding.fieldNome.text.toString(),
                 categoria = binding.categorySpinner.selectedItem.toString(),
                 descricao = binding.fieldDesc.text.toString(),
-                valor = BigDecimal.TEN // Deu errado -> binding.fieldValor.text.toString().toBigDecimal()
+                valor = BigDecimal(binding.fieldValor.text.toString())
             )
 
             registerViewModel.addFoodMenuItem(foodMenuItem)
 
             Toast.makeText(
                 activity,
-                "Item ${binding.fieldNome.text.toString()} adicionado!",
+                "Item ${binding.fieldNome.text} adicionado!",
                 Toast.LENGTH_LONG
             ).show()
         }
