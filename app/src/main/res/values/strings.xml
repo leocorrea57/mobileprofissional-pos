@@ -29,7 +29,7 @@
     <string name="valor_rr">Valor (R$)</string>
     <string name="descricao">Descrição</string>
     <string name="nome_do_item">Nome do item</string>
-    <string name="editar_item">Editar item</string>
+    <string name="editar">Editar</string>
     <string name="adicionar">Adicionar</string>
     <string name="sigla_real">R$</string>
     <string name="item_do_cardapio">Item do cardápio</string>

@@ -65,11 +65,12 @@ class FoodMenuItemAdapter(
         notifyDataSetChanged()
     }
 
+    @SuppressLint("NotifyDataSetChanged")
     fun filter(text: String) {
-        if (text.isEmpty()) {
-            cardapio = cardapioCopy
+        cardapio = if (text.isEmpty()) {
+            cardapioCopy
         } else {
-            cardapio = cardapioCopy.filter { it.nome.contains(text, ignoreCase = true) }.toMutableList()
+            cardapioCopy.filter { it.nome.contains(text, ignoreCase = true) }.toMutableList()
         }
         notifyDataSetChanged()
     }
