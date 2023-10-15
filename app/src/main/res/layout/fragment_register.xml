@@ -1,64 +1,109 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:layout_margin="10dp">
+    android:paddingHorizontal="16dp">
 
     <TextView
-        android:id="@+id/title_cardapio"
+        android:id="@+id/title_cadastro"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="0dp"
+        android:layout_marginTop="24dp"
         android:letterSpacing="0.05"
         android:text="@string/title_cadastro"
         android:textColor="@color/text_black"
         android:textSize="15sp"
         android:textStyle="bold" />
 
-    <EditText
+    <TextView
+        android:id="@+id/subtitle_item_cardapio"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="0dp"
+        android:text="@string/item_do_cardapio"
+        android:textColor="@color/text_gray"
+        android:textSize="13sp"
+        android:textStyle="bold" />
+
+    <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/fieldNome"
-        android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:layout_marginTop="24dp"
-        android:inputType="text"
-        android:hint="Nome do item" />
-
-    <EditText
-        android:id="@+id/fieldDesc"
-        android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:layout_marginTop="24dp"
-        android:inputType="text"
-        android:hint="Descricao" />
-
-    <Spinner
-        android:id="@+id/category_spinner"
-        android:layout_marginTop="16dp"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        />
+        android:layout_marginTop="16dp"
+        android:hint="@string/nome_do_item"
+        app:startIconDrawable="@drawable/ic_outline_fastfood">
 
-    <EditText
-        android:id="@+id/fieldValor"
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="text" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/fieldDesc"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:layout_marginTop="24dp"
-        android:inputType="numberDecimal"
-        android:hint="Valor (R$)" />
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:hint="@string/descricao"
+        app:startIconDrawable="@drawable/ic_outline_description">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="text" />
+
+    </com.google.android.material.textfield.TextInputLayout>
 
 
-    <Button
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/category_spinner"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:hint="@string/selecione_a_categoria"
+        app:startIconDrawable="@drawable/ic_baseline_filter_list">
+
+        <AutoCompleteTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="none"
+            tools:ignore="LabelFor" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/fieldValor"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:hint="@string/valor_rr"
+        app:prefixText="@string/sigla_real"
+        app:startIconDrawable="@drawable/ic_outline_attach_money">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="numberDecimal" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/btnAdicionar"
-        android:layout_width="200dp"
+        android:layout_width="250dp"
         android:layout_height="48dp"
-        android:text="Adicionar"
-        android:textStyle="bold"
-        android:layout_marginTop="48dp"
         android:layout_gravity="center"
-        />
-
+        android:layout_marginTop="48dp"
+        android:background="@drawable/rounded_button_shape"
+        android:text="@string/adicionar"
+        android:textStyle="bold" />
 
 </LinearLayout>

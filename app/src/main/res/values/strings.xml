@@ -30,6 +30,10 @@
     <string name="descricao">Descrição</string>
     <string name="nome_do_item">Nome do item</string>
     <string name="editar_item">Editar item</string>
+    <string name="adicionar">Adicionar</string>
+    <string name="sigla_real">R$</string>
+    <string name="item_do_cardapio">Item do cardápio</string>
+    <string name="selecione_a_categoria">Selecione a categoria</string>
 
     <string-array name="itens_array">
         <item>Pizzas salgadas</item>

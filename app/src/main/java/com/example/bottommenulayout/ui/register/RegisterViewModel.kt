@@ -14,7 +14,7 @@ class RegisterViewModel : ViewModel() {
     val text: LiveData<String> = _text
 
 
-    fun addFoodMenuItem(item : FoodMenuItem) {
+    fun addFoodMenuItem(item: FoodMenuItem) {
         DataStore.foodMenu.add(item)
     }
 }
