@@ -15,7 +15,7 @@
         android:id="@+id/navigation_search"
         android:name="com.example.bottommenulayout.ui.foodmenu.FoodMenuFragment"
         android:label="@string/title_cardapio"
-        tools:layout="@layout/fragment_search" />
+        tools:layout="@layout/fragment_foodmenu" />
 
     <fragment
         android:id="@+id/navigation_orders"

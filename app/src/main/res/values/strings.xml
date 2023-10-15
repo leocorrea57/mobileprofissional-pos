@@ -34,6 +34,7 @@
     <string name="sigla_real">R$</string>
     <string name="item_do_cardapio">Item do cardápio</string>
     <string name="selecione_a_categoria">Selecione a categoria</string>
+    <string name="pesquisar_item">Pesquisar item</string>
 
     <string-array name="itens_array">
         <item>Pizzas salgadas</item>

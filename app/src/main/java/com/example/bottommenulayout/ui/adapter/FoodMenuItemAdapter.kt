@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.bottommenulayout.databinding.FoodMenuItemBinding
 import com.example.bottommenulayout.model.FoodMenuItem
 import java.text.NumberFormat
+import java.util.*
 
 class FoodMenuItemAdapter(
     private val deleteListener: (FoodMenuItem) -> Unit,
@@ -15,6 +16,7 @@ class FoodMenuItemAdapter(
 ) :
     RecyclerView.Adapter<FoodMenuItemAdapter.FoodMenuItemHolder>() {
     private var cardapio = mutableListOf<FoodMenuItem>()
+    private var cardapioCopy = mutableListOf<FoodMenuItem>()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): FoodMenuItemHolder {
         FoodMenuItemBinding.inflate(LayoutInflater.from(parent.context), parent, false).apply {
@@ -57,8 +59,18 @@ class FoodMenuItemAdapter(
     }
 
     @SuppressLint("NotifyDataSetChanged")
-    fun updateList(list: List<FoodMenuItem>) {
+    fun updateList(list: List<FoodMenuItem>, filter: Boolean = false) {
         cardapio = list.toMutableList()
+        cardapioCopy = cardapio
+        notifyDataSetChanged()
+    }
+
+    fun filter(text: String) {
+        if (text.isEmpty()) {
+            cardapio = cardapioCopy
+        } else {
+            cardapio = cardapioCopy.filter { it.nome.contains(text, ignoreCase = true) }.toMutableList()
+        }
         notifyDataSetChanged()
     }
 }

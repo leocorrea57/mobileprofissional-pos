@@ -11,17 +11,19 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.activity.result.ActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
+import androidx.appcompat.widget.SearchView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.bottommenulayout.databinding.FragmentSearchBinding
+import com.example.bottommenulayout.databinding.FragmentFoodmenuBinding
 import com.example.bottommenulayout.model.FoodMenuItem
 import com.example.bottommenulayout.ui.adapter.FoodMenuItemAdapter
 
 class FoodMenuFragment : Fragment() {
 
-    private lateinit var binding: FragmentSearchBinding
+    private lateinit var binding: FragmentFoodmenuBinding
     private lateinit var foodMenuViewModel: FoodMenuViewModel
+    private lateinit var adapter: FoodMenuItemAdapter
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -29,8 +31,9 @@ class FoodMenuFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         foodMenuViewModel = ViewModelProvider(this)[FoodMenuViewModel::class.java]
-        binding = FragmentSearchBinding.inflate(inflater, container, false)
+        binding = FragmentFoodmenuBinding.inflate(inflater, container, false)
         setContent()
+        setListeners()
         return binding.root
     }
 
@@ -38,10 +41,24 @@ class FoodMenuFragment : Fragment() {
         LinearLayoutManager(this.context).apply {
             this.orientation = LinearLayoutManager.VERTICAL
             binding.recyclerCardapio.layoutManager = this
-            val adapter = FoodMenuItemAdapter(::deleteListener, ::editListener)
+            adapter = FoodMenuItemAdapter(::deleteListener, ::editListener)
             adapter.updateList(foodMenuViewModel.getFoodMenuItens())
             binding.recyclerCardapio.adapter = adapter
         }
+    }
+
+    private fun setListeners() {
+        binding.searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
+            override fun onQueryTextSubmit(query: String?): Boolean {
+                return false
+            }
+
+            override fun onQueryTextChange(newText: String?): Boolean {
+                adapter.filter(newText.toString())
+                return true
+            }
+
+        })
     }
 
     private fun deleteListener(item: FoodMenuItem) {
