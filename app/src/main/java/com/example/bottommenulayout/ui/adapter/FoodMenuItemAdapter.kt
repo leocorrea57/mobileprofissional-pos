@@ -45,6 +45,7 @@ class FoodMenuItemAdapter(
             binding.textNome.text = item.nome
             binding.textDescricao.text = item.descricao
             binding.textValor.text = numberFormat.format(item.valor)
+            binding.textCategoria.text = item.categoria
 
             if (divider) binding.divider.visibility = View.VISIBLE else binding.divider.visibility = View.GONE
 

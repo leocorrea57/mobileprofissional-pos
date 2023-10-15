@@ -18,7 +18,7 @@
             android:layout_height="52sp"
             android:layout_marginVertical="8dp"
             android:contentDescription="@string/logotipo_restaurante"
-            android:src="@drawable/ic_round_receipt"
+            android:src="@drawable/ic_round_fastfood"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
@@ -31,6 +31,7 @@
             android:layout_marginHorizontal="8dp"
             android:textColor="@color/text_black"
             android:textSize="13sp"
+            app:layout_constraintVertical_chainStyle="packed"
             app:layout_constraintBottom_toTopOf="@id/text_descricao"
             app:layout_constraintEnd_toStartOf="@id/button_edit"
             app:layout_constraintStart_toEndOf="@id/icon"
@@ -43,23 +44,39 @@
             android:layout_height="wrap_content"
             android:textColor="@color/text_gray"
             android:textSize="12sp"
-            app:layout_constraintBottom_toTopOf="@id/text_valor"
+            app:layout_constraintBottom_toTopOf="@id/text_categoria"
             app:layout_constraintEnd_toEndOf="@id/text_nome"
             app:layout_constraintStart_toStartOf="@id/text_nome"
             app:layout_constraintTop_toBottomOf="@id/text_nome"
             tools:text="Descrição do item Descrição do item Descrição do item Descrição do item Descrição do item" />
 
         <TextView
-            android:id="@+id/text_valor"
+            android:id="@+id/text_categoria"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="2dp"
+            android:textColor="@color/secondary_red"
+            android:textSize="12sp"
+            android:paddingHorizontal="6dp"
+            android:paddingVertical="2dp"
+            android:background="@drawable/category_text_background"
+            android:backgroundTint="#0DE81F1D"
+            app:layout_constraintBottom_toTopOf="@id/text_valor"
+            app:layout_constraintStart_toStartOf="@id/text_descricao"
+            app:layout_constraintTop_toBottomOf="@id/text_descricao"
+            tools:text="Pizzas Salgadas" />
+
+        <TextView
+            android:id="@+id/text_valor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
             android:textColor="@color/text_black"
             android:textSize="12sp"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="@id/text_descricao"
-            app:layout_constraintTop_toBottomOf="@id/text_descricao"
+            app:layout_constraintTop_toBottomOf="@id/text_categoria"
             tools:text="R$ 10,00" />
 
         <ImageButton

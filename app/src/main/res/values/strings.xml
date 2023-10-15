@@ -35,10 +35,15 @@
     <string name="item_do_cardapio">Item do cardápio</string>
     <string name="selecione_a_categoria">Selecione a categoria</string>
     <string name="pesquisar_item">Pesquisar item</string>
+    <string name="example_profile_description">Pizzaria e comida caseira com variedade e entrega todos os dias da semana</string>
+    <string name="menu">Menu</string>
+    <string name="conversas">Conversas</string>
+    <string name="example_name">Restaurante Pizza Family</string>
+    <string name="configurar_card_pio_do_meu_restaurante">Configurar cardápio do meu restaurante</string>
 
     <string-array name="itens_array">
         <item>Pizzas salgadas</item>
         <item>Pizzas doces</item>
-        <item>BEBIDAS</item>
+        <item>Bebidas</item>
     </string-array>
 </resources>
